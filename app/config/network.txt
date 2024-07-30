@@ -1,0 +1,34 @@
+{
+    "network": {
+      "name": "traceability_dev",
+      "version": "2.2",
+      "channel": "mychannel3",
+      "orderers": [
+        {
+          "url": "orderer.n-vf3dk6trkzaljh2zqnss5z7vlq.managedblockchain.ap-southeast-1.amazonaws.com:30001",
+          "tlsCACerts": "/opt/home/managedblockchain-tls-chain.pem"
+        }
+      ],
+      "peers": [
+        {
+          "name": "peer0",
+          "url": "nd-emds73tebbf2voxgyk26ldr3wm.m-r6n74mk65ff57dmgwpw47lsrbi.n-vf3dk6trkzaljh2zqnss5z7vlq.managedblockchain.ap-southeast-1.amazonaws.com:30007",
+          "eventUrl": "nd-emds73tebbf2voxgyk26ldr3wm.m-r6n74mk65ff57dmgwpw47lsrbi.n-vf3dk6trkzaljh2zqnss5z7vlq.managedblockchain.ap-southeast-1.amazonaws.com:30008",
+          "tlsCACerts": "/opt/home/managedblockchain-tls-chain.pem"
+        },
+        {
+          "name": "peer1",
+          "url": "nd-2uxno5sy65gxlb6h3fw6gyzun4.m-r6n74mk65ff57dmgwpw47lsrbi.n-vf3dk6trkzaljh2zqnss5z7vlq.managedblockchain.ap-southeast-1.amazonaws.com:30009",
+          "eventUrl": "nd-2uxno5sy65gxlb6h3fw6gyzun4.m-r6n74mk65ff57dmgwpw47lsrbi.n-vf3dk6trkzaljh2zqnss5z7vlq.managedblockchain.ap-southeast-1.amazonaws.com:30010",
+          "tlsCACerts": "/opt/home/managedblockchain-tls-chain.pem"
+        }
+      ],
+      "tls": {
+        "enabled": true,
+        "certificates": {
+          "ca": "/opt/home/admin-msp/cacerts/ca-cert.pem"
+        }
+      }
+    }
+  }
+  

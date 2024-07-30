@@ -1,0 +1,65 @@
+{
+    "name": "traceability_dev",
+    "version": "2.2",
+    "channel": "mychannel3",
+    "client": {
+      "organization": "Org1",
+      "connection": {
+        "timeout": {
+          "peer": {
+            "endorser": "300",
+            "eventHub": "300"
+          },
+          "orderer": "300"
+        }
+      }
+    },
+    "organizations": {
+      "Org1": {
+        "mspid": "Org1MSP",
+        "peers": ["peer0.org1.example.com", "peer1.org1.example.com"],
+        "certificateAuthorities": ["ca.org1.example.com"],
+        "adminPrivateKey": {
+          "path": "/opt/home/admin-msp/keystore/464e8c92dde9ac192c5af93a9acc3b8c6158f682082767f9f966955b8efa99cd_sk"
+        },
+        "signedCert": {
+          "path": "/opt/home/admin-msp/cacerts/ca-m-r6n74mk65ff57dmgwpw47lsrbi-n-vf3dk6trkzaljh2zqnss5z7vlq-managedblockchain-ap-southeast-1-amazonaws-com-30002.pem"
+        }
+      }
+    },
+    "orderers": {
+      "orderer.example.com": {
+        "url": "orderer.n-vf3dk6trkzaljh2zqnss5z7vlq.managedblockchain.ap-southeast-1.amazonaws.com:30001",
+        "grpcOptions": {
+          "ssl-target-name-override": "orderer.example.com"
+        },
+        "tlsCACerts": {
+          "path": "/opt/home/admin-msp/cacerts/ca-m-r6n74mk65ff57dmgwpw47lsrbi-n-vf3dk6trkzaljh2zqnss5z7vlq-managedblockchain-ap-southeast-1-amazonaws-com-30002.pem"
+        }
+      }
+    },
+    "peers": {
+      "peer0.org1.example.com": {
+        "url": "nd-emds73tebbf2voxgyk26ldr3wm.m-r6n74mk65ff57dmgwpw47lsrbi.n-vf3dk6trkzaljh2zqnss5z7vlq.managedblockchain.ap-southeast-1.amazonaws.com:30007",
+        "tlsCACerts": {
+          "path": "/opt/home/admin-msp/cacerts/ca-m-r6n74mk65ff57dmgwpw47lsrbi-n-vf3dk6trkzaljh2zqnss5z7vlq-managedblockchain-ap-southeast-1-amazonaws-com-30002.pem"
+        }
+      },
+      "peer1.org1.example.com": {
+        "url": "nd-2uxno5sy65gxlb6h3fw6gyzun4.m-r6n74mk65ff57dmgwpw47lsrbi.n-vf3dk6trkzaljh2zqnss5z7vlq.managedblockchain.ap-southeast-1.amazonaws.com:30009",
+        "tlsCACerts": {
+          "path": "/opt/home/admin-msp/cacerts/ca-m-r6n74mk65ff57dmgwpw47lsrbi-n-vf3dk6trkzaljh2zqnss5z7vlq-managedblockchain-ap-southeast-1-amazonaws-com-30002.pem"
+        }
+      }
+    },
+    "certificateAuthorities": {
+      "ca.org1.example.com": {
+        "url": "ca.m-r6n74mk65ff57dmgwpw47lsrbi.n-vf3dk6trkzaljh2zqnss5z7vlq.managedblockchain.ap-southeast-1.amazonaws.com:30002",
+        "caName": "ca-org1",
+        "tlsCACerts": {
+          "path": "/opt/home/managedblockchain-tls-chain.pem"
+        }
+      }
+    }
+  }
+  

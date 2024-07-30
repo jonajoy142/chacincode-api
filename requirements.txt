@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+flake8
+pylint
+sqlalchemy
+uvicorn
+slowapi
+python-dotenv
+psycopg2-binary
+pydantic
+googlemaps
+boto3
+scalar-fastapi
+fabric-sdk-py
