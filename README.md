@@ -56,7 +56,3 @@ https://localhost:<port number>
 * You are not allowed to modify the codes in main.py, connectivity.py, scripts directory, docker files.(N.B.: You can change the container name in the docker-compose file if it is confilicting.)
 
 
-## Authors
-
-- [@Deepak M S](https://www.github.com/Deepak-coder80)
-

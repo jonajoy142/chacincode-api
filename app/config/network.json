@@ -1,63 +1,80 @@
 {
     "name": "traceability_dev",
+    "description": "Sample network contains 2 peers and 1 CA for Python SDK testing",
     "version": "2.2",
     "channel": "mychannel3",
     "client": {
       "organization": "Org1",
-      "connection": {
-        "timeout": {
-          "peer": {
-            "endorser": "300",
-            "eventHub": "300"
-          },
-          "orderer": "300"
-        }
+      "credentialStore": {
+        "path": "/tmp/hfc-kvs",
+        "cryptoStore": {
+          "path": "/tmp/hfc-cvs"
+        },
+        "wallet": "wallet-name"
       }
     },
     "organizations": {
-      "Org1": {
+      "org1.example.com": {
         "mspid": "Org1MSP",
-        "peers": ["peer0.org1.example.com", "peer1.org1.example.com"],
-        "certificateAuthorities": ["ca.org1.example.com"],
-        "adminPrivateKey": {
-          "path": "/opt/home/admin-msp/keystore/464e8c92dde9ac192c5af93a9acc3b8c6158f682082767f9f966955b8efa99cd_sk"
-        },
-        "signedCert": {
-          "path": "/opt/home/admin-msp/cacerts/ca-m-r6n74mk65ff57dmgwpw47lsrbi-n-vf3dk6trkzaljh2zqnss5z7vlq-managedblockchain-ap-southeast-1-amazonaws-com-30002.pem"
+        "peers": [
+          "peer0.org1.example.com",
+          "peer1.org1.example.com"
+        ],
+        "certificateAuthorities": [
+          "ca-org1"
+        ],
+        "users": {
+          "jona": {
+            "cert": "C:/Users/HP/Desktop/KIREAP/BLOCKCHAIN/admin-msp/signcerts/cert.pem",
+            "private_key": "C:/Users/HP/Desktop/KIREAP/BLOCKCHAIN/admin-msp/keystore/df57d5078d07314825739d8e7ab920d3530a02e72d0b9fa18fe754f856363b65_sk"
+          }
         }
       }
     },
     "orderers": {
-      "orderer.example.com": {
-        "url": "orderer.n-vf3dk6trkzaljh2zqnss5z7vlq.managedblockchain.ap-southeast-1.amazonaws.com:30001",
-        "grpcOptions": {
-          "ssl-target-name-override": "orderer.example.com"
-        },
-        "tlsCACerts": {
-          "path": "/opt/home/admin-msp/cacerts/ca-m-r6n74mk65ff57dmgwpw47lsrbi-n-vf3dk6trkzaljh2zqnss5z7vlq-managedblockchain-ap-southeast-1-amazonaws-com-30002.pem"
+        "orderer.example.com": {
+          "url": "nd-kzrymdrv3rhjjhbblxybfndhym.m-jqulx273o5blja6vwecp4xnh5q.n-vf3dk6trkzaljh2zqnss5z7vlq.managedblockchain.ap-southeast-1.amazonaws.com:30001",
+          "grpcOptions": {
+            "ssl-target-name-override": "orderer.example.com"
+          },
+          "tlsCACerts": {
+            "path": "C:/Users/HP/Desktop/KIREAP/BLOCKCHAIN/managedblockchain-tls-chain.pem"
+          }
         }
-      }
-    },
+      },
     "peers": {
       "peer0.org1.example.com": {
         "url": "nd-emds73tebbf2voxgyk26ldr3wm.m-r6n74mk65ff57dmgwpw47lsrbi.n-vf3dk6trkzaljh2zqnss5z7vlq.managedblockchain.ap-southeast-1.amazonaws.com:30007",
+        "eventUrl": "nd-emds73tebbf2voxgyk26ldr3wm.m-r6n74mk65ff57dmgwpw47lsrbi.n-vf3dk6trkzaljh2zqnss5z7vlq.managedblockchain.ap-southeast-1.amazonaws.com:30008",
+        "grpcOptions": {
+          "grpc.ssl_target_name_override": "peer0.org1.example.com",
+          "grpc.http2.keepalive_time": -1,
+          "GRPC_DNS_RESOLVER":"native"
+        },
         "tlsCACerts": {
-          "path": "/opt/home/admin-msp/cacerts/ca-m-r6n74mk65ff57dmgwpw47lsrbi-n-vf3dk6trkzaljh2zqnss5z7vlq-managedblockchain-ap-southeast-1-amazonaws-com-30002.pem"
+          "path": "C:/Users/HP/Desktop/KIREAP/BLOCKCHAIN/managedblockchain-tls-chain.pem"
         }
       },
       "peer1.org1.example.com": {
         "url": "nd-2uxno5sy65gxlb6h3fw6gyzun4.m-r6n74mk65ff57dmgwpw47lsrbi.n-vf3dk6trkzaljh2zqnss5z7vlq.managedblockchain.ap-southeast-1.amazonaws.com:30009",
+        "eventUrl": "nd-2uxno5sy65gxlb6h3fw6gyzun4.m-r6n74mk65ff57dmgwpw47lsrbi.n-vf3dk6trkzaljh2zqnss5z7vlq.managedblockchain.ap-southeast-1.amazonaws.com:30010",
+        "grpcOptions": {
+          "grpc.ssl_target_name_override": "peer1.org1.example.com",
+          "grpc.http2.keepalive_time": -1
+        },
         "tlsCACerts": {
-          "path": "/opt/home/admin-msp/cacerts/ca-m-r6n74mk65ff57dmgwpw47lsrbi-n-vf3dk6trkzaljh2zqnss5z7vlq-managedblockchain-ap-southeast-1-amazonaws-com-30002.pem"
+          "path": "C:/Users/HP/Desktop/KIREAP/BLOCKCHAIN/managedblockchain-tls-chain.pem"
         }
       }
     },
     "certificateAuthorities": {
-      "ca.org1.example.com": {
+      "ca-org1": {
         "url": "ca.m-r6n74mk65ff57dmgwpw47lsrbi.n-vf3dk6trkzaljh2zqnss5z7vlq.managedblockchain.ap-southeast-1.amazonaws.com:30002",
-        "caName": "ca-org1",
+        "httpOptions": {
+          "verify": false
+        },
         "tlsCACerts": {
-          "path": "/opt/home/managedblockchain-tls-chain.pem"
+          "path": "C:/Users/HP/Desktop/KIREAP/BLOCKCHAIN/managedblockchain-tls-chain.pem"
         }
       }
     }
