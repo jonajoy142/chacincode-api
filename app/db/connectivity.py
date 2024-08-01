@@ -16,7 +16,7 @@ database = env_vars['db']
 
 
 # database connection url
-DB_URL = DB_URL = f"postgresql://jona:jonajoy_80@devdb.cfr0tmyy1fur.ap-south-1.rds.amazonaws.com/traceability_db" #DB_URL = f"postgresql://{user}:{password}@{host}/{database}"
+DB_URL = DB_URL = #DB_URL = f"postgresql://{user}:{password}@{host}/{database}"
 
 # create db engine
 engine = create_engine(url=DB_URL, pool_size=10)
