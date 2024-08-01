@@ -33,7 +33,7 @@
     },
     "orderers": {
         "orderer.example.com": {
-          "url": "nd-kzrymdrv3rhjjhbblxybfndhym.m-jqulx273o5blja6vwecp4xnh5q.n-vf3dk6trkzaljh2zqnss5z7vlq.managedblockchain.ap-southeast-1.amazonaws.com:30001",
+          "url": "https://orderer.n-vf3dk6trkzaljh2zqnss5z7vlq.managedblockchain.ap-southeast-1.amazonaws.com:30001",
           "grpcOptions": {
             "ssl-target-name-override": "orderer.example.com"
           },
@@ -44,8 +44,8 @@
       },
     "peers": {
       "peer0.org1.example.com": {
-        "url": "nd-emds73tebbf2voxgyk26ldr3wm.m-r6n74mk65ff57dmgwpw47lsrbi.n-vf3dk6trkzaljh2zqnss5z7vlq.managedblockchain.ap-southeast-1.amazonaws.com:30007",
-        "eventUrl": "nd-emds73tebbf2voxgyk26ldr3wm.m-r6n74mk65ff57dmgwpw47lsrbi.n-vf3dk6trkzaljh2zqnss5z7vlq.managedblockchain.ap-southeast-1.amazonaws.com:30008",
+        "url": "https://10.0.154.122:30007",
+        "eventUrl": "https://10.0.154.122:30008",
         "grpcOptions": {
           "grpc.ssl_target_name_override": "peer0.org1.example.com",
           "grpc.http2.keepalive_time": -1,
@@ -56,8 +56,8 @@
         }
       },
       "peer1.org1.example.com": {
-        "url": "nd-2uxno5sy65gxlb6h3fw6gyzun4.m-r6n74mk65ff57dmgwpw47lsrbi.n-vf3dk6trkzaljh2zqnss5z7vlq.managedblockchain.ap-southeast-1.amazonaws.com:30009",
-        "eventUrl": "nd-2uxno5sy65gxlb6h3fw6gyzun4.m-r6n74mk65ff57dmgwpw47lsrbi.n-vf3dk6trkzaljh2zqnss5z7vlq.managedblockchain.ap-southeast-1.amazonaws.com:30010",
+        "url": "https://nd-2uxno5sy65gxlb6h3fw6gyzun4.m-r6n74mk65ff57dmgwpw47lsrbi.n-vf3dk6trkzaljh2zqnss5z7vlq.managedblockchain.ap-southeast-1.amazonaws.com:30009",
+        "eventUrl": "https://nd-2uxno5sy65gxlb6h3fw6gyzun4.m-r6n74mk65ff57dmgwpw47lsrbi.n-vf3dk6trkzaljh2zqnss5z7vlq.managedblockchain.ap-southeast-1.amazonaws.com:30010",
         "grpcOptions": {
           "grpc.ssl_target_name_override": "peer1.org1.example.com",
           "grpc.http2.keepalive_time": -1
